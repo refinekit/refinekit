@@ -1,7 +1,7 @@
 #!/bin/bash
 # Sync Obsidian vault to the repo's content folder
 
-OBSIDIAN_VAULT="/home/obsidian/ReliaCode_Vault/Blog"
+OBSIDIAN_VAULT="/home/obsidian/ReliaCode_Vault/Website"
 REPO_VAULT="$(dirname "$0")/../src/content/vault"
 
 # Ensure the target directory exists

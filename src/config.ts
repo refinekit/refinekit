@@ -27,16 +27,12 @@ export const SITE: Site = {
 
 export const HEADER_LINKS: Link[] = [
   {
+    name: 'About',
+    url: '/about',
+  },
+  {
     name: 'Posts',
     url: '/posts',
-  },
-  {
-    name: 'Projects',
-    url: '/projects',
-  },
-  {
-    name: 'Photos',
-    url: '/photos',
   },
 ]
 

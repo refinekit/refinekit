@@ -6,7 +6,7 @@ import type { CoverLayout, PostType } from '~/types'
 
 const posts = defineCollection({
   loader: ObsidianMdLoader({
-    base: './src/content/vault',
+    base: './src/content/vault/Posts',
     url: 'posts',
   }),
   schema: () =>
@@ -54,6 +54,17 @@ const posts = defineCollection({
       })),
 })
 
+const pages = defineCollection({
+  loader: glob({
+    pattern: '*.md',
+    base: './src/content/vault',
+  }),
+  schema: () =>
+    z.object({
+      title: z.string(),
+    }),
+})
+
 const projects = defineCollection({
   loader: glob({
     pattern: '**/*.{md,mdx}',
@@ -74,4 +85,4 @@ const projects = defineCollection({
     }),
 })
 
-export const collections = { posts, projects }
+export const collections = { posts, pages, projects }
