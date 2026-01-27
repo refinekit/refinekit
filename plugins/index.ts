@@ -76,9 +76,12 @@ export const rehypePlugins = [
           'aria-label': text ? `Link to ${text}` : undefined,
         }
       },
-      content: {
-        type: 'text',
-        value: '#',
+      content: (heading: any) => {
+        const level = heading.tagName[1]
+        return {
+          type: 'text',
+          value: 'h' + level,
+        }
       },
     },
   ],
