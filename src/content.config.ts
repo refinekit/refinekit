@@ -1,24 +1,38 @@
 import { glob } from 'astro/loaders'
+import { ObsidianMdLoader } from 'astro-loader-obsidian'
 import { defineCollection, z } from 'astro:content'
 import { POSTS_CONFIG } from '~/config'
 import type { CoverLayout, PostType } from '~/types'
 
 const posts = defineCollection({
-  loader: glob({
-    pattern: '**/*.{md,mdx}',
-    base: './src/content/posts',
+  loader: ObsidianMdLoader({
+    base: './src/content/vault',
+    url: 'posts',
   }),
-  schema: ({ image }) =>
+  schema: () =>
     z
       .object({
+        // Required Obsidian fields
         title: z.string(),
-        description: z.string(),
-        pubDate: z.date(),
-        tags: z.array(z.string()).optional(),
-        updatedDate: z.date().optional(),
-        author: z.string().default(POSTS_CONFIG.author),
-        cover: image().optional(),
-        ogImage: image().optional(),
+        slug: z.string(),
+        permalink: z.string(),
+        created: z.date(),
+        updated: z.date(),
+        // Optional Obsidian fields
+        description: z.string().optional(),
+        tags: z.array(z.string()).nullish(),
+        aliases: z.array(z.string()).nullish(),
+        publish: z.boolean().optional(),
+        author: z.string().optional(),
+        cover: z.string().optional(),
+        image: z.string().optional(),
+        links: z.array(z.any()).optional(),
+        images: z.array(z.any()).optional(),
+        cssClass: z.array(z.string()).nullish(),
+        cssclasses: z.array(z.string()).nullish(),
+        order: z.number().optional(),
+        zettelkasten: z.any().optional(),
+        // Litos-specific fields (optional in Obsidian)
         recommend: z.boolean().default(false),
         postType: z.custom<PostType>().optional(),
         coverLayout: z.custom<CoverLayout>().optional(),
@@ -28,7 +42,15 @@ const posts = defineCollection({
       })
       .transform((data) => ({
         ...data,
-        ogImage: POSTS_CONFIG.ogImageUseCover && data.cover ? data.cover : data.ogImage,
+        // Map Obsidian fields to Litos expected fields
+        pubDate: data.created,
+        updatedDate: data.updated,
+        description: data.description || '',
+        author: data.author || POSTS_CONFIG.author,
+        tags: data.tags || [],
+        draft: data.publish === false ? true : (data.draft || false),
+        ogImage: undefined as any,
+        cover: undefined as any,
       })),
 })
 
