@@ -4,7 +4,10 @@
       "Bash(find:*)",
       "Bash(node --version)",
       "Bash(pnpm --version:*)",
-      "Bash(pnpm build:*)"
+      "Bash(pnpm build:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfix: Style header anchors to show on hover, hide on first h1\n\n- Add ''markdown'' class to home and about pages for proper styling\n- Header anchors now show ''#'' symbol on hover \\(positioned left\\)\n- Hide anchor on first h1 to exclude page titles\n- Anchors visible only on hover with opacity transition\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)"
     ]
   }
 }

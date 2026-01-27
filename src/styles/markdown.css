@@ -87,6 +87,11 @@
     font-size: clamp(1.75em, 4vw, 2em);
     margin-block: 0 1em;
     line-height: 1.1111111;
+
+    /* Hide anchor on first h1 (page title) */
+    &:first-child .header-anchor {
+      display: none;
+    }
   }
 
   & h2 {

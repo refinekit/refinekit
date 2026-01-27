@@ -72,7 +72,7 @@ export const rehypePlugins = [
         })
         return {
           'class': 'header-anchor',
-          'aria-hidden': 'false',
+          'aria-hidden': 'true',
           'aria-label': text ? `Link to ${text}` : undefined,
         }
       },
