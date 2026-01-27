@@ -1,5 +1,6 @@
 ---
 import { cn } from '~/lib/utils'
+import { url } from '~/lib/url'
 
 type Props = {
   href: string
@@ -9,11 +10,12 @@ type Props = {
 }
 
 const { href, class: className, background, ...props }: Props = Astro.props
-const isActive = Astro.url.pathname.startsWith(href)
+const fullHref = url(href)
+const isActive = Astro.url.pathname.startsWith(fullHref)
 ---
 
 <a
-  {href}
+  href={fullHref}
   class={cn(
     'text-sm px-2 sm:px-4 py-2 font-medium',
     background && 'transition-colors text-foreground/50 hover:bg-accent hover:text-foreground',

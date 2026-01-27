@@ -1,5 +1,8 @@
 ---
 import Layout from '~/layouts/Layout.astro'
+import { url } from '~/lib/url'
+
+const homeUrl = url('/')
 ---
 
 <Layout title="Page Not Found" description="404 Page">
@@ -28,7 +31,7 @@ import Layout from '~/layouts/Layout.astro'
       </div>
       <div class="flex items-center text-muted-foreground mb-2 ml-5 animate-fade-in" style="animation-delay: 1.1s">
         <span class="text-blue-500 mr-2 w-4 text-center">›</span>
-        <span class="animate-typing cursor-pointer hover:text-foreground" style="animation-delay: 1.1s" onclick="window.location.href='/'"
+        <span class="animate-typing cursor-pointer hover:text-foreground" style="animation-delay: 1.1s" onclick={`window.location.href='${homeUrl}'`}
           >cd /</span
         >
       </div>
