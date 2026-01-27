@@ -3,7 +3,8 @@
     "allow": [
       "Bash(find:*)",
       "Bash(node --version)",
-      "Bash(pnpm --version:*)"
+      "Bash(pnpm --version:*)",
+      "Bash(pnpm build:*)"
     ]
   }
 }

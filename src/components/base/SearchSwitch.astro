@@ -1,5 +1,7 @@
 ---
+import { url } from '~/lib/url'
 
+const pagefindUrl = url('/pagefind/pagefind.js')
 ---
 
 <button
@@ -214,7 +216,7 @@
 </script>
 
 {import.meta.env.PROD &&
-  <script is:inline define:vars={{scriptUrl: ('/pagefind/pagefind.js')}}>
+  <script is:inline define:vars={{scriptUrl: pagefindUrl}}>
     async function loadPagefind() {
       const pagefind = await import(scriptUrl)
 

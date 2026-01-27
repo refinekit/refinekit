@@ -33,36 +33,7 @@
 }
 
 /* ===== 字体配置 ===== */
-@layer base {
-  /* 数字字体 */
-  @font-face {
-    font-family: 'Numbers';
-    src: url('/fonts/GeistVF.woff2') format('woff2');
-    font-display: swap;
-  }
-
-  /* 破折号字体 */
-  @font-face {
-    font-family: 'CJKEmDash';
-    unicode-range: U+2014, U+2E3A-2E3B;
-    src: url('/fonts/ZhudouSansVF-subset.woff2') format('woff2');
-    font-display: swap;
-  }
-
-  /* 标题字体 */
-  @font-face {
-    font-family: 'Lexend';
-    src: url('/fonts/Lexend-VariableFont_wght.woff2') format('woff2');
-    font-display: swap;
-  }
-
-  /* 等宽字体 */
-  @font-face {
-    font-family: 'GeistMono';
-    src: url('/fonts/GeistMono.woff2') format('woff2');
-    font-display: swap;
-  }
-}
+/* Font faces are now loaded dynamically in Head.astro to support base path */
 
 /* ===== 颜色变量 ===== */
 @layer base {
