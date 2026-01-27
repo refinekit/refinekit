@@ -8,3 +8,11 @@ publish: true
 # Welcome
 
 This is my project. Welcome to my blog powered by Obsidian and Astro!
+
+### Subhe
+## One heading
+
+Some text here.
+
+### Subheading
+
