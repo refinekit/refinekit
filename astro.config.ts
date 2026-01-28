@@ -18,6 +18,10 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      host: true,
+      allowedHosts: ['emic.echo-fir.ts.net'],
+    },
   },
   markdown: {
     syntaxHighlight: false,

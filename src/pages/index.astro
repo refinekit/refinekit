@@ -25,6 +25,8 @@ if (hasPinnedPosts) {
 
 // Load home page content from vault
 const homePage = await getEntry('pages', 'home')
+const title = homePage?.data.title || "Welcome"
+const subtitle = homePage?.data.subtitle
 const { Content } = homePage ? await render(homePage) : { Content: null }
 ---
 
@@ -32,12 +34,20 @@ const { Content } = homePage ? await render(homePage) : { Content: null }
   <div class="relative z-[1]">
     <div class="fade-up">
       <div class="py-8 pb-10 px-6 sm:px-8">
-        {Content ? (
-          <div class="markdown prose prose-lg dark:prose-invert max-w-none">
+        <h1 class="flex flex-col gap-2">
+          <span class="text-4xl sm:text-5xl tracking-tight">
+            {title}
+          </span>
+          {subtitle && (
+            <span class="text-muted-foreground font-light text-xl sm:text-2xl block tracking-wide text-balance">
+              {subtitle}
+            </span>
+          )}
+        </h1>
+        {Content && (
+          <div class="pro text-muted-foreground text-pretty mt-6">
             <Content />
           </div>
-        ) : (
-          <p class="text-muted-foreground">No home page content found. Create a home.md file in your vault.</p>
         )}
         <div class="mt-6 flex gap-6">
           {
@@ -49,34 +59,6 @@ const { Content } = homePage ? await render(homePage) : { Content: null }
           }
         </div>
       </div>
-      {
-        ENABLED && (
-          <>
-            <SectionDivider />
-            <div class="py-8 pb-10 px-6 max-md:px-6">
-              <div class="px-2 max-md:px-0">
-                <h2 class="text-2xl sm:text-3xl">Spotlight</h2>
-                <p class="text-muted-foreground mb-6 mt-1">Most recent contributions.</p>
-              </div>
-              <GithubContributions username={GITHUB_USERNAME} tooltipEnabled={TOOLTIP_ENABLED} client:load transition:animate="none" />
-            </div>
-          </>
-        )
-      }
-      {
-        SKILLS_ENABLED && SKILLS_DATA.length > 0 && (
-          <>
-            <SectionDivider />
-            <div class="py-8 pb-10 px-6 max-md:px-6">
-              <div class="px-2 max-md:px-0">
-                <h2 class="text-2xl sm:text-3xl tracking-tight">Skills</h2>
-                <p class="text-muted-foreground mb-6 mt-1">Here are some skills I have used:</p>
-              </div>
-              <SkillsShowcase skillsData={SKILLS_DATA} />
-            </div>
-          </>
-        )
-      }
       <SectionDivider />
       <div class="py-8 pb-10 px-6 sm:px-8">
         <h2 class="text-2xl sm:text-3xl tracking-tight">Posts</h2>

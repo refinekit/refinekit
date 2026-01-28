@@ -68,13 +68,29 @@ Ensure you have the following installed on your machine:
     pnpm install
     ```
 
-3.  **Start the development server**
+3.  **Configure your Obsidian vault path**
+
+    Copy the `.env.example` file to `.env` and update the `OBSIDIAN_VAULT_PATH` variable:
+
+    ```bash
+    cp .env.example .env
+    ```
+
+    Then edit `.env` and set your vault path:
+
+    ```
+    OBSIDIAN_VAULT_PATH=/path/to/your/obsidian/vault/Website
+    ```
+
+4.  **Start the development server**
 
     ```bash
     pnpm dev
     ```
 
     Your site should now be running at `http://localhost:4321`.
+
+    **Note**: The dev server automatically watches your Obsidian vault for changes. Any modifications to files in your vault will be automatically synced to the blog and reflected in the browser with hot-reload. No need to manually sync or redeploy!
 
 ## Configuration
 
@@ -113,7 +129,8 @@ Links for the Header and Footer can be managed via `HEADER_LINKS` and `FOOTER_LI
 
 | Script | Description |
 | :--- | :--- |
-| `pnpm dev` | Starts the local development server. |
+| `pnpm dev` | Starts the local development server with automatic Obsidian vault watching and syncing. |
+| `pnpm sync` | Manually syncs content from Obsidian vault to the blog. |
 | `pnpm build` | Builds the site for production. |
 | `pnpm preview` | Previews the built production site locally. |
 | `pnpm format` | Formats code using Prettier. |

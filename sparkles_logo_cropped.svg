@@ -1,0 +1,18 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="61 124 390 323">
+  <ns0:rect width="390" height="323" fill="#2D3748" x="61" y="124" />
+  
+  
+  <ns0:text x="105" y="256" text-anchor="middle" font-family="Arial" fill="#F7FAFC" font-size="320" dy="0.35em">[</ns0:text>
+  
+  
+  <ns0:text x="407" y="256" text-anchor="middle" font-family="Arial" fill="#F7FAFC" font-size="320" dy="0.35em">]</ns0:text>
+  
+  
+  <ns0:path d="M256 138 L272 245 L380 270 L272 295 L256 402 L240 295 L132 270 L240 245 Z" fill="#F7FAFC" />
+  
+  
+  <ns0:path d="M352 180 L359 210 L389 217 L359 224 L352 254 L345 224 L315 217 L345 210 Z" fill="#A0AEC0" />
+  
+  
+  <ns0:path d="M160 286 L167 316 L197 323 L167 330 L160 360 L153 330 L123 323 L153 316 Z" fill="#A0AEC0" />
+</ns0:svg>
