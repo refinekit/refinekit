@@ -1,0 +1,18 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#2D3748"/>
+  
+  <!-- Left bracket -->
+  <text x="105" y="256" text-anchor="middle" font-family="Arial" fill="#F7FAFC" font-size="320" dy="0.35em">[</text>
+  
+  <!-- Right bracket -->
+  <text x="407" y="256" text-anchor="middle" font-family="Arial" fill="#F7FAFC" font-size="320" dy="0.35em">]</text>
+  
+  <!-- Main sparkle (4-point star) -->
+  <path d="M256 138 L272 245 L380 270 L272 295 L256 402 L240 295 L132 270 L240 245 Z" fill="#F7FAFC"/>
+  
+  <!-- Small sparkle top-right -->
+  <path d="M352 180 L359 210 L389 217 L359 224 L352 254 L345 224 L315 217 L345 210 Z" fill="#A0AEC0"/>
+  
+  <!-- Small sparkle bottom-left -->
+  <path d="M160 286 L167 316 L197 323 L167 330 L160 360 L153 330 L123 323 L153 316 Z" fill="#A0AEC0"/>
+</svg>

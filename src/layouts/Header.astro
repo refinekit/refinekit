@@ -5,8 +5,6 @@ import HeaderGradient from '~/components/theme/HeaderGradient.astro'
 import SectionDivider from '~/components/base/SectionDivider.astro'
 import HeaderLink from '~/components/base/HeaderLink.astro'
 import SearchSwitch from '~/components/base/SearchSwitch.astro'
-import { Image } from 'astro:assets'
-import favicon from '../../public/favicon.svg'
 import { url } from '~/lib/url'
 ---
 
@@ -15,13 +13,14 @@ import { url } from '~/lib/url'
   <div class="mx-auto global-layout-width flex justify-between px-6 sm:px-8 py-4 lg:px-8">
     <div class="flex gap-3 sm:gap-6 items-center flex-shrink-0">
       <a href={url('/')} class="pointer-events-auto select-none" transition:persist>
-        <Image
-          src={favicon}
-          width={32}
-          height={32}
+        <img
+          src={url('/reliacode_logo.svg')}
+          width="32"
+          height="32"
           alt="Logo"
           class="w-8 h-8 border-2 border-transparent dark:border-border"
-          densities={[1, 2]}
+          loading="eager"
+          decoding="async"
         />
       </a>
       <div class="flex gap-1">
