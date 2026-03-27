@@ -1,11 +1,11 @@
 {
-  "name": "reliacode-blog",
+  "name": "refinekit-blog",
   "type": "module",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "sync": "bash scripts/sync-vault.sh",
-    "watch:vault": "bash -c 'chokidar \"${OBSIDIAN_VAULT_PATH:-/home/obsidian/ReliaCode_Vault/Website}/**/*\" -c \"pnpm sync\" --initial'",
+    "watch:vault": "bash -c 'chokidar \"${OBSIDIAN_VAULT_PATH:-/home/obsidian/refinekit_vault/Website}/**/*\" -c \"pnpm sync\" --initial'",
     "dev": "concurrently --kill-others --names 'SYNC,ASTRO' 'pnpm watch:vault' 'astro dev'",
     "build": "pnpm sync && astro check && astro build",
     "preview": "astro preview",

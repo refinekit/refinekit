@@ -14,12 +14,12 @@ import type {
 
 //--- Readme Page Config ---
 export const SITE: Site = {
-  title: 'ReliaCode Blog',
+  title: 'refinekit blog',
   description:
     'A blog about software development, technology, and more.',
-  website: 'https://aleksiknuutila.github.io/reliacode_blog/',
+  website: 'https://refinekit.github.io/website/',
   lang: 'en',
-  base: '/reliacode_blog',
+  base: '/website',
   author: 'Aleksi Knuutila',
   ogImage: '/og-image.webp',
   transition: false,

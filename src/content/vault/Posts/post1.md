@@ -1,6 +1,6 @@
 ---
-title: Blog posts about ReliaCode will go here
-description: This is a placeholder blogpost for ReliaCode
+title: Blog posts about refinekit will go here
+description: This is a placeholder blogpost for refinekit
 tags:
   - placeholder
 publish: true
