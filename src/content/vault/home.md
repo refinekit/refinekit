@@ -1,6 +1,6 @@
 ---
 title: refinekit
-subtitle: Reliable AI-assisted analytics
+subtitle: Evaluate and fix LLM text analysis
 ---
 refinekit is a Python library that uses LLMs to help you work with messy text data. It's optimised for collections of long text and helps you with tasks such as extracting relevant passages, classification and transforming text from one form to another.
 
