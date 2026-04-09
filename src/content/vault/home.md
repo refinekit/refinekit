@@ -1,7 +1,7 @@
 ---
-title: ReliaCode
+title: refinekit
 subtitle: Reliable AI-assisted analytics
 ---
-Large language models (LLMs) have substantially changed some areas of work, particularly software development. Their adoption in data processing and analytics has been more limited. A commonly identified constraint is reliability and auditability: analytical workflows often have low tolerance for errors, and results typically require reproducible verification. These requirements are challenging, given that LLM outputs are non-deterministic.
+refinekit is a Python library that uses LLMs to help you work with messy text data. It's optimised for collections of long text and helps you with tasks such as extracting relevant passages, classification and transforming text from one form to another.
 
-The ReliaCode project investigates how LLMs could support analytical work while maintaining reliability and traceability. It will evaluate approaches such as integrating LLMs with deterministic tools for specific analytical tasks, and developing methods to verify that generated implementations correspond to user intent and satisfy relevant constraints. The work will be conducted in collaboration with pilot organisations and will also examine potential routes to commercialisation.
+refinekit distinctively collects signals about which cases LLMs find ambiguous and helps you prioritise what to review. It also provides tools for optimising data extraction based on your annotations.
