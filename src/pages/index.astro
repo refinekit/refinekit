@@ -28,6 +28,10 @@ const homePage = await getEntry('pages', 'home')
 const title = homePage?.data.title || "Welcome"
 const subtitle = homePage?.data.subtitle
 const { Content } = homePage ? await render(homePage) : { Content: null }
+
+// Load get-started page content from vault
+const getStartedPage = await getEntry('pages', 'get-started')
+const { Content: GetStartedContent } = getStartedPage ? await render(getStartedPage) : { Content: null }
 ---
 
 <Layout title="Home" description={SITE.description}>
@@ -58,8 +62,72 @@ const { Content } = homePage ? await render(homePage) : { Content: null }
             })
           }
         </div>
+
+        <!-- Section Navigation Buttons -->
+        <div class="mt-8 flex gap-4 justify-center">
+          <!-- Primary Button - Get started -->
+          <a
+            href="#get-started"
+            class="group px-8 py-4 text-base rounded-lg bg-primary/80 text-primary-foreground hover:bg-primary/90 transition-all duration-200 hover:scale-105 active:scale-95 hover:shadow-md"
+          >
+            <span>Get started</span>
+          </a>
+
+          <!-- Secondary Button - Demos -->
+          <a
+            href="#demos"
+            class="group px-6 py-4 text-base font-medium rounded-lg bg-primary/10 hover:bg-primary/15 transition-all duration-200 border border-border hover:border-primary/40 hover:scale-105 active:scale-95"
+          >
+            <span>See demos</span>
+          </a>
+        </div>
       </div>
+
       <SectionDivider />
+
+      <!-- Get Started Section -->
+      <div id="get-started" class="py-8 pb-10 px-6 sm:px-8">
+        <h2 class="text-2xl sm:text-3xl tracking-tight mb-4">{getStartedPage?.data.title || 'Get Started'}</h2>
+        {GetStartedContent ? (
+          <div class="markdown prose prose-lg dark:prose-invert max-w-none">
+            <GetStartedContent />
+          </div>
+        ) : (
+          <div class="text-foreground/80">
+            <p class="text-muted-foreground">No get-started content found. Create a get-started.md file in your vault.</p>
+          </div>
+        )}
+      </div>
+
+      <SectionDivider />
+
+      <!-- Demos Section -->
+      <div id="demos" class="py-8 pb-10 px-6 sm:px-8">
+        <h2 class="text-2xl sm:text-3xl tracking-tight mb-4">Demos</h2>
+        <div class="pro text-foreground/80">
+          <p class="mb-4">
+            Explore our collection of demos to see what's possible with refinekit.
+          </p>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-6">
+            <div class="p-4 border border-border rounded hover:bg-accent transition-colors">
+              <h3 class="font-semibold mb-2">Demo 1</h3>
+              <p class="text-sm text-muted-foreground">A showcase of core features and functionality.</p>
+            </div>
+            <div class="p-4 border border-border rounded hover:bg-accent transition-colors">
+              <h3 class="font-semibold mb-2">Demo 2</h3>
+              <p class="text-sm text-muted-foreground">Advanced techniques and best practices.</p>
+            </div>
+            <div class="p-4 border border-border rounded hover:bg-accent transition-colors">
+              <h3 class="font-semibold mb-2">Demo 3</h3>
+              <p class="text-sm text-muted-foreground">Real-world examples and use cases.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <SectionDivider />
+
+      <!-- Posts Section -->
       <div class="py-8 pb-10 px-6 sm:px-8">
         <h2 class="text-2xl sm:text-3xl tracking-tight">Posts</h2>
         <p class="text-muted-foreground mb-6 mt-1">

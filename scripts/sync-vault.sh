@@ -2,7 +2,7 @@
 # Sync Obsidian vault to the repo's content folder
 
 # Use environment variable or fallback to default path
-OBSIDIAN_VAULT="${OBSIDIAN_VAULT_PATH:-/home/obsidian/refinekit_vault/Website}"
+OBSIDIAN_VAULT="${OBSIDIAN_VAULT_PATH:-/home/obsidian/ReliaCode_Vault/Website}"
 REPO_VAULT="$(dirname "$0")/../src/content/vault"
 
 # Ensure the target directory exists

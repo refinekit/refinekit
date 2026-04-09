@@ -12,18 +12,19 @@ import { url } from '~/lib/url'
 <header>
   <div class="mx-auto global-layout-width flex justify-between px-6 sm:px-8 py-4 lg:px-8">
     <div class="flex gap-3 sm:gap-6 items-center flex-shrink-0">
-      <a href={url('/')} class="pointer-events-auto select-none" transition:persist>
+      <a href={url('/')} class="pointer-events-auto select-none flex items-center gap-2" transition:persist>
         <img
           src={url('/refinekit_logo.svg')}
           width="32"
           height="32"
           alt="Logo"
-          class="w-8 h-8 border-2 border-transparent dark:border-border"
+          class="w-8 h-8"
           loading="eager"
           decoding="async"
         />
+        <span class="text-xl font-light tracking-tight translate-y[5px] -translate-x-[2px]">refinekit</span>
       </a>
-      <div class="flex gap-1">
+      <div class="flex gap-1 translate-y-[3px]">
         {
           HEADER_LINKS.map((link) => (
             <HeaderLink href={link.url} background>
