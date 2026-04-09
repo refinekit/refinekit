@@ -1,8 +1,7 @@
 ---
-title: "Get Started"
+title: Get started
 ---
 ### 1. Installation
-nce 
 
 ```bash
 pip install refinekit
